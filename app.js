@@ -32,7 +32,11 @@ getData.addEventListener("keydown", (e) => {
         let new_li = document.createElement("li");
         let deleteBtn = document.createElement("button");
 
-        new_li.innerText = timestamp + "  " + task + "  ";
+        new_li.innerText =
+            timestamp +
+            "\u00A0\u00A0\u00A0\u00A0\u00A0" +
+            task +
+            "\u00A0\u00A0\u00A0\u00A0\u00A0";
         deleteBtn.innerText = "Delete";
 
         new_li.appendChild(deleteBtn);
