@@ -4,11 +4,13 @@ const ul = document.querySelector("#Does");
 
 addBtn.addEventListener("click", () => {
     let task = getData.value;
+    let now = new Date();
+    let timestamp = now.toLocaleString();
 
     let new_li = document.createElement("li");
     let deleteBtn = document.createElement("button");
 
-    new_li.innerText = task + " ";
+    new_li.innerText = timestamp + "  " + task + "  ";
     deleteBtn.innerText = "Delete";
 
     new_li.appendChild(deleteBtn);
@@ -24,11 +26,13 @@ addBtn.addEventListener("click", () => {
 getData.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         let task = getData.value;
+        let now = new Date();
+        let timestamp = now.toLocaleString();
 
         let new_li = document.createElement("li");
         let deleteBtn = document.createElement("button");
 
-        new_li.innerText = task + " ";
+        new_li.innerText = timestamp + "  " + task + "  ";
         deleteBtn.innerText = "Delete";
 
         new_li.appendChild(deleteBtn);
