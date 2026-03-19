@@ -10,5 +10,5 @@ document.body.appendChild(show);
 
 btn.addEventListener("click", () => {
     let value = roll() + 1;
-    show.innerText = arr[value -1] + " " + value;
+    show.innerText = arr[value - 1] + " " + value;
 });
