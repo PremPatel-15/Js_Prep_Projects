@@ -15,3 +15,7 @@
     justify-content: left;
     align-items: center;
 }
+
+#Does li {
+    margin-bottom: 0.05rem;
+}
