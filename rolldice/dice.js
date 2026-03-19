@@ -9,5 +9,6 @@ let show = document.createElement("h1");
 document.body.appendChild(show);
 
 btn.addEventListener("click", () => {
-    show.innerText = arr[roll()];
+    let value = roll() + 1;
+    show.innerText = arr[value -1] + " " + value;
 });
