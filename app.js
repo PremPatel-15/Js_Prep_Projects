@@ -3,7 +3,7 @@ const addBtn = document.querySelector("#addBtn");
 const ul = document.querySelector("#Does");
 
 function addingTask() {
-    let task = getData.value;
+    let task = getData.value.trim();
     if (task !== "") {
         let now = new Date();
         let timestamp = now.toLocaleString();
