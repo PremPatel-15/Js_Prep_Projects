@@ -1,6 +1,30 @@
-body {
+html {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 1em;
+}
+
+.card {
+    margin-top: 1rem;
+}
+input {
+    width: 100%;
+    max-width: 225px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgba(25, 135, 84, 0.5);
+    box-shadow: 0 0 2px rgba(25, 135, 84, 1);
+}
+.inputDiv {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    box-shadow: 5px 5px 5px #212529;
 }
