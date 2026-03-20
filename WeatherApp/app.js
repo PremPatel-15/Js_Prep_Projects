@@ -25,8 +25,7 @@ fetch(api)
         wTemp.innerHTML = "Temperature: " + res.main.temp + " °C";
         wPressure.innerHTML = "Pressure: " + res.main.pressure + " hPa";
         wHumidity.innerHTML = "Humidity: " + res.main.humidity + "%";
-        wWind.innerHTML =
-            wWind.innerHTML = `Wind Speed: ${res.wind.speed} m/s <br> Wind Degree: ${res.wind.deg}°`;
+        wWind.innerHTML = `Wind Speed: ${res.wind.speed} m/s <br> Wind Degree: ${res.wind.deg}°`;
         wProvinceName.innerHTML = "Province Name: " + res.name;
     })
     .catch((err) => {
