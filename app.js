@@ -29,6 +29,7 @@ function addingTask() {
         getData.value = "";
     } else {
         alert("don't add empty task");
+        getData.value = "";
     }
 }
 
