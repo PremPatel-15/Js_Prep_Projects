@@ -13,7 +13,7 @@ const addBtn = document.querySelector("#addBtn");
 const apiKey = "e40e739c9f3a5b7f35364806c48e6fa4";
 
 function changeVal(res) {
-    if (res.cod == 200) {
+    if (res.cod === 200) {
         wSituation.innerHTML = res.weather[0].main;
         wDescription.innerHTML =
             '"Weather is like ' + res.weather[0].description + '"';
@@ -23,19 +23,20 @@ function changeVal(res) {
         wWind.innerHTML = `Wind Speed: ${res.wind.speed} m/s <br> Wind Degree: ${res.wind.deg}°`;
         wProvinceName.innerHTML = "Province Name: " + res.name;
     } else {
-        document.body.innerHTML = "";
-
-        const h3 = document.createElement("h3");
-        h3.classList.add("alert", "alert-danger");
-        h3.innerText = "City not found!";
-
-        document.body.appendChild(h3);
+        wProvinceName.innerHTML = "❌ City not found!";
+        wSituation.innerHTML = "";
+        wDescription.innerHTML = "";
+        wTemp.innerHTML = "";
+        wPressure.innerHTML = "";
+        wHumidity.innerHTML = "";
+        wWind.innerHTML = "";
     }
 }
 
-addBtn.addEventListener("click", () => {
+addBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     const cityName = city.value.trim();
-    const api = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
+    const api = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
     fetch(api)
         .then((res) => {
             return res.json();
@@ -50,8 +51,9 @@ addBtn.addEventListener("click", () => {
 
 city.addEventListener("keydown", (e) => {
     if (e.key == "Enter") {
+        e.preventDefault();
         const cityName = city.value.trim();
-        const api = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
+        const api = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
         fetch(api)
             .then((res) => {
                 return res.json();
