@@ -43,6 +43,7 @@ addBtn.addEventListener("click", (e) => {
         })
         .then((res) => {
             changeVal(res);
+            city.value = "";
         })
         .catch((err) => {
             console.log(err);
@@ -60,6 +61,7 @@ city.addEventListener("keydown", (e) => {
             })
             .then((res) => {
                 changeVal(res);
+                city.value = "";
             })
             .catch((err) => {
                 console.log(err);
